@@ -8,6 +8,6 @@ data class WishItem (
 
     var dateAdded: Long,
 
-    val id: Int? = 0
+    val id: Int? = null
 
 )

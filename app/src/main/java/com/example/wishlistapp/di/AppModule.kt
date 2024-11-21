@@ -8,6 +8,7 @@ import com.example.wishlistapp.data.repository.WishRepositoryImpl
 import com.example.wishlistapp.domain.repository.WishRepository
 import com.example.wishlistapp.domain.useCase.DeleteWish
 import com.example.wishlistapp.domain.useCase.GetAllWish
+import com.example.wishlistapp.domain.useCase.UpsertWish
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -53,5 +54,14 @@ object AppModule{
     ): DeleteWish {
         return DeleteWish(wishRepository)
     }
+
+    @Provides
+    @Singleton
+    fun providesUpsertWish(
+        wishRepository: WishRepository
+    ): UpsertWish {
+        return UpsertWish(wishRepository)
+    }
+
 
 }

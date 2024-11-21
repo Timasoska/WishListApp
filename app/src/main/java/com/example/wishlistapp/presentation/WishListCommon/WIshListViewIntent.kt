@@ -1,8 +1,9 @@
 package com.example.wishlistapp.presentation.WishListCommon
 
-sealed class WIshListViewIntent {
-    object AddWishList : WIshListViewIntent()
-    object DeleteWishList : WIshListViewIntent()
-    object EditWishList : WIshListViewIntent()
+import com.example.wishlistapp.domain.model.WishItem
+
+sealed class WIshListViewIntent{
+    data class UpsertWishList(val wishItem: WishItem) : WIshListViewIntent()
+    data class DeleteWishList(val wishItem: WishItem) : WIshListViewIntent()
     //object ShareWishList //Скинуть кому-то свой вишлист?
 }

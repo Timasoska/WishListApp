@@ -4,12 +4,11 @@ import com.example.wishlistapp.domain.model.WishItem
 import com.example.wishlistapp.domain.repository.WishRepository
 import javax.inject.Inject
 
-class DeleteWish @Inject constructor(
+class UpsertWish @Inject constructor(
     private val wishRepository: WishRepository
-) {
-
+){
     suspend operator fun invoke(wishItem: WishItem){
-        wishRepository.deleteWish(wishItem)
+        wishRepository.upsertWish(wishItem)
     }
 
 }

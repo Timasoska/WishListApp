@@ -12,7 +12,7 @@ data class WishEntity (
     var dateAdded: Long,
 
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = 0
+    val id: Int? = null
 
 
 )
